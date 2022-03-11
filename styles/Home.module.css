@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: #eceef7;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  width: 500px;
+  height: 500px;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFF;
+  margin-top: 20px;
+  border-radius: 20px;
+  box-shadow: 1px 3px 20 px -2px #e3e6ec;
+  padding: 50px;
+}
+
+.priceCard {
+  margin-top: 50px;
+}
+
+.input {
+  border: 2px solid #eceef7;
+  outline: none;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 14px 20px;
+  color: #212126;
+  background-color: #eceef7;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.button{
+  background-color: #0070f3;
+  border: none;
+  width: 100%;
+  padding: 15px 0;
+  color: #FFF;
+  border-radius: 15px;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type='number']{
+  -moz-appearance: textfield;
+}
