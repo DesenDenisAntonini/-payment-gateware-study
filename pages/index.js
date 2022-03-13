@@ -1,7 +1,7 @@
+import Axios from 'axios'
 import Head from 'next/head'
 import Image from 'next/image'
-import { useState } from 'react'
-import { useCallback } from 'react/cjs/react.production.min';
+import { useState, useCallback } from 'react'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -12,8 +12,23 @@ export default function Home() {
   const handleSubmit = useCallback(async (event) => {
     event.preventDefault();
 
-    const {} = await Axios.get('')
-  }, [])
+    const { data: token } = await Axios.post('/api/token', {
+      card:{
+        number: cardNumber,
+        exp_month: expirationDate.split('/')[0],
+        exp_year: expirationDate.split('/')[1],
+        cvc
+      }
+    });
+
+    const {} = await Axios.post('/api/charge', {
+      amount: 3500,
+      token: token.id
+    })
+
+  }, 
+  [cardNumber, expirationDate, cvc]
+  );
 
   return (
     <form className={styles.container} onSubmit={handleSubmit}>
